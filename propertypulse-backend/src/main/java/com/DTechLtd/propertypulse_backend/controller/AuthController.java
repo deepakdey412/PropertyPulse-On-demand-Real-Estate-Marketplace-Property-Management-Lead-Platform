@@ -29,9 +29,7 @@ public class AuthController {
         this.jwtUtil = jwtUtil;
     }
 
-    // ---------------------------
-    // REGISTER USER
-    // ---------------------------
+    // REGISTER USER API
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody RegisterRequest request) {
         if (userRepository.existsByEmail(request.getEmail())) {
@@ -58,9 +56,7 @@ public class AuthController {
         return ResponseEntity.ok("User registered successfully with role: " + user.getRole());
     }
 
-    // ---------------------------
-    // LOGIN USER
-    // ---------------------------
+    // LOGIN USER API
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request) {
         Authentication authentication = authenticationManager.authenticate(

@@ -9,5 +9,4 @@ public class PropertypulseBackendApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PropertypulseBackendApplication.class, args);
 	}
-
 }
